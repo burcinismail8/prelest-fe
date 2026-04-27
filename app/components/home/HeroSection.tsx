@@ -31,24 +31,24 @@ const cityOptions = [
 const sectionClass =
   "overflow-visible bg-linear-to-l from-[#FAD9EB] to-[#FFF8FD]";
 const containerClass =
-  "mx-auto flex min-h-[calc(100svh-50px)] w-full max-w-[2200px] flex-col items-center justify-start gap-8 overflow-visible px-5 pt-10 pb-28 text-center sm:px-10 sm:pt-14 sm:pb-32 lg:min-h-[calc(100svh-120px)] lg:flex-row lg:justify-between lg:gap-12 lg:py-16 lg:pb-28 lg:text-left xl:px-20 min-[2560px]:max-w-[3000px] min-[2560px]:gap-20 min-[2560px]:px-36";
+  "mx-auto flex min-h-[calc(100svh-50px)] w-full max-w-[1600px] flex-col items-center gap-8 overflow-visible px-5 pt-10 pb-28 text-center sm:px-10 sm:pt-14 sm:pb-32 lg:min-h-[calc(100svh-120px)] lg:flex-row lg:justify-between lg:gap-10 lg:px-14 lg:py-12 lg:pb-20 lg:text-left xl:px-16";
 const contentClass =
-  "flex w-full max-w-3xl flex-col items-center justify-center lg:w-1/2 lg:items-start min-[2560px]:max-w-5xl";
+  "flex w-full max-w-3xl flex-col items-center justify-center lg:w-1/2 lg:items-start";
 const mobileImageClass =
   "mb-4 aspect-square w-[160px] rounded-full object-cover shadow-xl sm:w-[220px] lg:hidden";
 const titleClass =
-  "my-5 text-[clamp(2.25rem,10vw,4rem)] leading-tight text-[#FA2199] sm:my-6 lg:mb-8 lg:text-[clamp(2.75rem,4vw,4rem)] xl:max-w-4xl min-[2560px]:mb-12 min-[2560px]:text-[clamp(6rem,4vw,8rem)]";
+  "my-5 text-4xl leading-tight text-[#FA2199] sm:my-6 sm:text-5xl lg:mb-6 lg:text-4xl xl:max-w-4xl xl:text-5xl";
 const dividerClass =
-  "h-1 w-full max-w-3xl bg-[#FFCEEC] opacity-50 min-[2560px]:h-1.5 min-[2560px]:max-w-5xl";
+  "h-1 w-full max-w-3xl bg-[#FFCEEC] opacity-50";
 const descriptionClass =
-  "mt-5 max-w-3xl text-[clamp(1rem,4vw,1.375rem)] leading-relaxed text-[#FF6DC7] sm:mt-6 lg:mt-8 lg:text-[clamp(1.125rem,1.5vw,1.5rem)] min-[2560px]:mt-12 min-[2560px]:max-w-5xl min-[2560px]:text-[clamp(2.25rem,1.4vw,3rem)]";
+  "mt-5 max-w-3xl text-base leading-relaxed text-[#FF6DC7] sm:mt-6 sm:text-xl lg:mt-6 lg:text-lg xl:text-xl";
 const formClass = "mt-6 flex w-full flex-col gap-3 sm:gap-4";
 const ctaButtonClass =
-  "mt-6 w-full rounded-md bg-[#FF70BF]/80 px-8 py-5 text-base text-white hover:bg-[#FF70BF] sm:w-auto sm:px-10 sm:py-6 sm:text-lg lg:text-xl xl:text-2xl min-[2560px]:mt-16 min-[2560px]:px-16 min-[2560px]:py-9 min-[2560px]:text-4xl";
+  "mt-6 w-full rounded-md bg-[#FF70BF]/80 px-8 py-5 text-base text-white hover:bg-[#FF70BF] sm:w-auto sm:px-10 sm:py-6 sm:text-lg lg:px-8 lg:py-5 lg:text-base xl:text-lg";
 const desktopImageWrapperClass =
-  "hidden w-full items-center justify-center lg:flex lg:w-1/2 min-[2560px]:w-2/5";
+  "hidden w-full items-center justify-center lg:flex lg:w-1/2";
 const desktopImageClass =
-  "aspect-square w-[min(30vw,380px)] rounded-full object-cover xl:w-[420px] min-[2560px]:w-[700px]";
+  "aspect-square w-[300px] rounded-full object-cover xl:w-[340px]";
 
 const HeroSection = () => {
   return (

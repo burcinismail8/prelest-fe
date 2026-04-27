@@ -54,16 +54,25 @@ function ComboboxInput({
   inputClassName,
   children,
   disabled = false,
+  disableFocusRing = false,
   showTrigger = true,
   showClear = false,
   ...props
 }: ComboboxPrimitive.Input.Props & {
   inputClassName?: string
+  disableFocusRing?: boolean
   showTrigger?: boolean
   showClear?: boolean
 }) {
   return (
-    <InputGroup className={cn("w-auto", className)}>
+    <InputGroup
+      className={cn(
+        "w-auto",
+        disableFocusRing &&
+          "has-[[data-slot=input-group-control]:focus-visible]:border-inherit! has-[[data-slot=input-group-control]:focus-visible]:ring-0!",
+        className
+      )}
+    >
       <ComboboxPrimitive.Input
         render={
           <InputGroupInput disabled={disabled} className={inputClassName} />

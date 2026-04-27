@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const authButtonBaseClass = "rounded-3xl border-gray-200 font-medium shadow-lg";
 const desktopAuthButtonSizeClass =
-  "px-10 py-5 text-base min-[1500px]:px-14 min-[1500px]:py-6 min-[1500px]:text-lg min-[2560px]:px-20 min-[2560px]:py-9 min-[2560px]:text-3xl";
+  "px-7 py-4 text-sm xl:px-9 xl:py-5 xl:text-base";
 const mobileAuthButtonSizeClass = "px-6 py-4 text-base";
 const loginButtonColorClass =
   "bg-white text-[#D552A3] hover:bg-gray-100/60 hover:text-[#D552A3]";
@@ -37,8 +37,8 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-[#D552A3] px-4 py-3 min-[800px]:px-8 min-[800px]:py-2 min-[2560px]:px-16 min-[2560px]:py-5">
-      <div className="mx-auto w-full max-w-[2200px] min-[2560px]:max-w-[3000px]">
+    <header className="border-b border-[#D552A3] px-4 py-3 min-[800px]:px-8 min-[800px]:py-2">
+      <div className="mx-auto w-full max-w-[1600px]">
         <div className="flex items-center justify-between">
           {/* Logo links back to the home page. */}
           <Link href="/">
@@ -47,7 +47,7 @@ const NavBar = () => {
               alt="logo"
               width={150}
               height={150}
-              className="ml-1 h-14 w-14 scale-100 transition-all duration-300 hover:scale-110 min-[800px]:ml-5 min-[800px]:h-20 min-[800px]:w-20 min-[800px]:scale-110 min-[800px]:hover:scale-120 min-[2560px]:h-28 min-[2560px]:w-28"
+              className="ml-1 h-14 w-14 scale-100 transition-all duration-300 hover:scale-110 min-[800px]:ml-5 min-[800px]:h-16 min-[800px]:w-16 min-[800px]:scale-110 min-[800px]:hover:scale-120 xl:h-20 xl:w-20"
             />
           </Link>
 
@@ -78,7 +78,7 @@ const NavBar = () => {
           </button>
 
           {/* Desktop auth buttons are shown from 800px and wider. */}
-          <div className="hidden items-center gap-3 min-[800px]:flex min-[1500px]:gap-4 min-[2560px]:gap-7">
+          <div className="hidden items-center gap-3 min-[800px]:flex xl:gap-4">
             <Button
               variant="outline"
               className={authButtonClass(
@@ -88,7 +88,7 @@ const NavBar = () => {
             >
               Вход
             </Button>
-            <div className="h-9 w-1 rounded-full bg-[#FF70BF] opacity-25 min-[1500px]:h-12 min-[2560px]:h-20 min-[2560px]:w-1.5" />
+            <div className="h-8 w-1 rounded-full bg-[#FF70BF] opacity-25 xl:h-10" />
             <Button
               variant="outline"
               className={authButtonClass(

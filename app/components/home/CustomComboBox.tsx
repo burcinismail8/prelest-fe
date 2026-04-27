@@ -16,9 +16,9 @@ type CustomComboBoxProps = {
 };
 
 const inputGroupClass =
-  "h-12 w-full rounded-lg border-[#D552A3]/60 bg-white px-4 text-[#D552A3] shadow-none sm:h-14 sm:px-6 has-[[data-slot=input-group-control]:focus-visible]:border-[#D552A3]/60! has-[[data-slot=input-group-control]:focus-visible]:ring-0!";
+  "h-12 w-full rounded-lg border-[#D552A3]/60 bg-white px-4 text-[#D552A3] shadow-none sm:h-14 sm:px-6";
 const inputClass =
-  "text-base! placeholder:text-[#D552A3] focus-visible:ring-0! sm:text-lg! md:text-lg!";
+  "text-base! placeholder:text-[#D552A3] focus-visible:ring-0! sm:text-lg!";
 const contentClass = "bg-white text-base shadow-lg sm:text-lg";
 const itemClass =
   "p-2 text-sm text-[#D552A3] sm:text-base data-highlighted:bg-[#FFE2F4]! data-highlighted:text-[#D552A3]!";
@@ -40,6 +40,7 @@ const CustomComboBox = ({ placeholder, options }: CustomComboBoxProps) => {
           placeholder={placeholder}
           className={inputGroupClass}
           inputClassName={inputClass}
+          disableFocusRing
         />
       </div>
       <ComboboxContent
