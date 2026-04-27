@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const authButtonBaseClass =
-  "rounded-3xl border-gray-200 font-medium shadow-lg";
+const authButtonBaseClass = "rounded-3xl border-gray-200 font-medium shadow-lg";
 const desktopAuthButtonSizeClass =
   "px-10 py-5 text-base min-[1500px]:px-14 min-[1500px]:py-6 min-[1500px]:text-lg min-[2560px]:px-20 min-[2560px]:py-9 min-[2560px]:text-3xl";
 const mobileAuthButtonSizeClass = "px-6 py-4 text-base";
@@ -14,11 +13,24 @@ const loginButtonColorClass =
   "bg-white text-[#D552A3] hover:bg-gray-100/60 hover:text-[#D552A3]";
 const registerButtonColorClass =
   "bg-[#D552A3] text-white hover:bg-[#D552A3]/80 hover:text-white";
+const softTransitionClass =
+  "duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]";
 const burgerLineClass =
-  "h-0.5 w-5 rounded-full bg-[#D552A3] transition-transform";
+  `h-0.5 w-5 rounded-full bg-[#D552A3] transition-all ${softTransitionClass}`;
+const burgerButtonClass =
+  `flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#D552A3]/30 bg-white shadow-sm transition-all ${softTransitionClass} hover:bg-gray-100/60 hover:shadow-md active:scale-[0.97] active:bg-[#FDE9F4] active:shadow-sm min-[800px]:hidden`;
 
 const authButtonClass = (...classes: string[]) =>
   [authButtonBaseClass, ...classes].join(" ");
+
+const mobileMenuClass = (isOpen: boolean) =>
+  [
+    "overflow-hidden transition-all min-[800px]:hidden",
+    softTransitionClass,
+    isOpen
+      ? "mt-4 max-h-52 translate-y-0 opacity-100"
+      : "mt-0 max-h-0 -translate-y-3 opacity-0 pointer-events-none",
+  ].join(" ");
 
 const NavBar = () => {
   // Tracks whether the mobile burger menu is opened or closed.
@@ -45,7 +57,7 @@ const NavBar = () => {
             aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((current) => !current)}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#D552A3]/30 bg-white shadow-sm transition-colors hover:bg-gray-100/60 min-[800px]:hidden"
+            className={burgerButtonClass}
           >
             {/* These three lines animate into an X when the menu opens. */}
             <span
@@ -54,7 +66,7 @@ const NavBar = () => {
               }`}
             />
             <span
-              className={`h-0.5 w-5 rounded-full bg-[#D552A3] transition-opacity ${
+              className={`h-0.5 w-5 rounded-full bg-[#D552A3] transition-opacity ${softTransitionClass} ${
                 isMenuOpen ? "opacity-0" : ""
               }`}
             />
@@ -90,8 +102,8 @@ const NavBar = () => {
         </div>
 
         {/* Mobile menu appears below the navbar when the burger is opened. */}
-        {isMenuOpen && (
-          <div className="mt-4 flex flex-col gap-3 min-[800px]:hidden">
+        <div className={mobileMenuClass(isMenuOpen)}>
+          <div className="flex flex-col gap-3">
             <Button
               variant="outline"
               className={authButtonClass(
@@ -111,7 +123,7 @@ const NavBar = () => {
               Регистрация
             </Button>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
