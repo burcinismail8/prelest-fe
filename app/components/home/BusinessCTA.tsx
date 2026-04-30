@@ -21,8 +21,8 @@ const BusinessCTA = () => {
         </h3>
         <div className="my-2 h-0.5 w-16 bg-[#FF6DC7]/70 sm:w-20 md:my-3 md:w-24 lg:w-28 xl:w-32" />
         <p className="max-w-xl text-sm leading-6 text-[#FF6DC7]/60 sm:text-base md:max-w-2xl md:text-lg lg:text-lg xl:max-w-3xl 2xl:text-xl">
-          Присъедини своя салон към Прелест. Направи графика си достъпен за нови
-          клиенти и управлявай резервациите си на едно място.
+          Присъедини своя салон към Прелест. Направи графика си достъпен за
+          твоите клиенти и управлявай резервациите си на едно място.
         </p>
       </div>
 
