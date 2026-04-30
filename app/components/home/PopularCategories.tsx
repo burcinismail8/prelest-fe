@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 const popularCategories = [
   {
@@ -53,23 +52,35 @@ const PopularCategories = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 w-2/3">
+      {/* Category cards: 2 columns on mobile, centered 3+2 on tablets, 5 across on desktop. */}
+      <div className="grid w-full max-w-sm grid-cols-2 gap-4 sm:max-w-xl sm:gap-5 md:max-w-3xl md:grid-cols-6 md:gap-6 lg:max-w-5xl lg:grid-cols-5 lg:gap-5 xl:max-w-6xl xl:gap-8 2xl:max-w-7xl">
         {popularCategories.map((category, index) => (
           <div
             key={category.id}
-            className="flex flex-col items-center justify-center hover:scale-105 transition-all duration-300"
+            className={`flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 md:col-span-2 lg:col-span-1 ${
+              index === popularCategories.length - 2
+                ? "md:col-start-2 lg:col-start-auto"
+                : ""
+            } ${
+              index === popularCategories.length - 1
+                ? "col-span-2 justify-self-center lg:col-span-1"
+                : ""
+            }`}
           >
             <div
-              className={`bg-[#FF70BF] rounded-full p-8 ${index % 2 === 0 ? "bg-[#FF70BF]/50" : "bg-[#FF70BF]"}`}
+              className={`rounded-full p-5 sm:p-6 md:p-7 lg:p-6 xl:p-8 ${index % 2 === 0 ? "bg-[#FF70BF]/50" : "bg-[#FF70BF]"}`}
             >
               <Image
                 src={category.image}
                 alt={category.name}
                 width={100}
                 height={100}
+                className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-14 lg:w-14 xl:h-20 xl:w-20"
               />
             </div>
-            <p className="text-lg text-[#FF70BF] mt-4">{category.name}</p>
+            <p className="mt-3 text-sm text-[#FF70BF] sm:text-base md:mt-4 md:text-lg lg:text-base xl:text-lg">
+              {category.name}
+            </p>
           </div>
         ))}
       </div>
