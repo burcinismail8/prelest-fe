@@ -4,17 +4,25 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="border-t-2 border-[#D552A3]/35 text-[#C04993] px-4 py-3 min-[800px]:px-8 min-[800px]:py-2 flex flex-col">
-      <div className="flex justify-between items-center gap-4 min-h-[100px] mb-3">
-        <div className="flex w-1/3 items-center justify-center">
-          <Image src="/white-logo.svg" alt="logo" width={180} height={180} />
+    <div className="border-t-2 border-[#D552A3]/35 px-4 py-6 text-[#C04993] sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 md:grid md:grid-cols-3 md:items-center md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+        <div className="flex items-center justify-center md:justify-start">
+          <Image
+            src="/white-logo.svg"
+            alt="logo"
+            width={180}
+            height={180}
+            className="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36 2xl:h-40 2xl:w-40"
+          />
         </div>
-        <div className="flex flex-col w-1/3 px-8 justify-center border-r-2 border-l-2 border-[#D552A3]/35">
-          <p className="text-md text-[#9C8C95] mb-3">За Бизнеса</p>
-          <div className="text-lg gap-2 flex flex-col">
+        <div className="flex flex-col border-y-2 border-[#D552A3]/35 py-6 text-center md:border-x-2 md:border-y-0 md:px-6 md:py-0 md:text-left lg:px-8 xl:px-10 2xl:px-12">
+          <p className="mb-3 text-sm text-[#9C8C95] lg:text-base xl:text-lg">
+            За Бизнеса
+          </p>
+          <div className="flex flex-col gap-2 text-base lg:text-lg xl:text-xl">
             <Link
               href="#"
-              className="flex items-center gap-2 hover:text-[#D552A3] hover:underline"
+              className="flex items-center justify-center gap-2 hover:text-[#D552A3] hover:underline md:justify-start"
             >
               Добави своя салон
               <Image
@@ -26,7 +34,7 @@ const Footer = () => {
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-2 hover:text-[#D552A3] hover:underline"
+              className="flex items-center justify-center gap-2 hover:text-[#D552A3] hover:underline md:justify-start"
             >
               Нашите услуги
               <Image
@@ -38,7 +46,7 @@ const Footer = () => {
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-2 hover:text-[#D552A3] hover:underline"
+              className="flex items-center justify-center gap-2 hover:text-[#D552A3] hover:underline md:justify-start"
             >
               Стани партньор
               <Image
@@ -50,9 +58,11 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col w-1/3 px-5 justify-center">
-          <p className="text-md text-[#9C8C95] mb-3">Информация</p>
-          <div className="text-lg gap-2 flex flex-col">
+        <div className="flex flex-col text-center md:px-4 md:text-left lg:px-6 xl:px-8 2xl:px-10">
+          <p className="mb-3 text-sm text-[#9C8C95] lg:text-base xl:text-lg">
+            Информация
+          </p>
+          <div className="flex flex-col gap-2 text-base lg:text-lg xl:text-xl">
             <div>
               <Link href="#" className="hover:text-[#D552A3] hover:underline">
                 За нас
@@ -71,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center flex-col text-sm">
+      <div className="mx-auto mt-6 lg:mt-10 flex w-full max-w-[1600px] items-center justify-between gap-2 text-center text-xs lg:text-sm flex-col md:text-left xl:text-base">
         <div>
           <Link href="#" className="hover:text-[#D552A3] hover:underline">
             Общи условия
