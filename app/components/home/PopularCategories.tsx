@@ -52,33 +52,33 @@ const PopularCategories = () => {
         </p>
       </div>
 
-      {/* Category cards: 2 columns on mobile, centered 3+2 on tablets, 5 across on desktop. */}
-      <div className="grid w-full max-w-sm grid-cols-2 gap-4 sm:max-w-xl sm:gap-5 md:max-w-3xl md:grid-cols-6 md:gap-6 lg:max-w-5xl lg:grid-cols-5 lg:gap-5 xl:max-w-6xl xl:gap-8 2xl:max-w-7xl">
+      {/* Category cards: centered 3+2 on mobile/tablet, 5 across on desktop. */}
+      <div className="grid w-full max-w-sm grid-cols-6 gap-4 sm:max-w-xl sm:gap-5 md:max-w-3xl md:gap-6 lg:max-w-5xl lg:grid-cols-5 lg:gap-5 xl:max-w-6xl xl:gap-8 2xl:max-w-7xl">
         {popularCategories.map((category, index) => (
           <div
             key={category.id}
-            className={`flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 md:col-span-2 lg:col-span-1 ${
+            className={`col-span-2 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 lg:col-span-1 ${
               index === popularCategories.length - 2
-                ? "md:col-start-2 lg:col-start-auto"
+                ? "col-start-2 lg:col-start-auto"
                 : ""
             } ${
               index === popularCategories.length - 1
-                ? "col-span-2 justify-self-center lg:col-span-1"
+                ? "justify-self-center"
                 : ""
             }`}
           >
             <div
-              className={`rounded-full p-5 sm:p-6 md:p-7 lg:p-6 xl:p-8 ${index % 2 === 0 ? "bg-[#FF70BF]/50" : "bg-[#FF70BF]"}`}
+              className={`rounded-full p-4 sm:p-6 md:p-7 lg:p-6 xl:p-8 ${index % 2 === 0 ? "bg-[#FF70BF]/50" : "bg-[#FF70BF]"}`}
             >
               <Image
                 src={category.image}
                 alt={category.name}
                 width={100}
                 height={100}
-                className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-14 lg:w-14 xl:h-20 xl:w-20"
+                className="h-10 w-10 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-14 lg:w-14 xl:h-20 xl:w-20"
               />
             </div>
-            <p className="mt-3 text-sm text-[#FF70BF] sm:text-base md:mt-4 md:text-lg lg:text-base xl:text-lg">
+            <p className="mt-3 text-xs text-[#FF70BF] sm:text-base md:mt-4 md:text-lg lg:text-base xl:text-lg">
               {category.name}
             </p>
           </div>
