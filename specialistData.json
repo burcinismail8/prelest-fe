@@ -1,0 +1,56 @@
+{
+    "specialist": {
+      "id": "eda-ismet-001",
+      "name": "Еда Исмет",
+      "slug": "eda-ismet",
+      "profile_image": "/images/specialists/eda-ismet.png",
+      "bio": "професионален грим, микроблейдинг, миглопластика",
+      "contact": {
+        "phone": "0800 000 000",
+        "address": "Асеновград, Пловдив",
+        "instagram": "phibrowseda"
+      },
+      "services": [
+        {
+          "id": "s1",
+          "title": "Микроблейдинг (вежди)",
+          "duration_minutes": 120,
+          "price": 250,
+          "currency": "лв."
+        },
+        {
+          "id": "s2",
+          "title": "Миглопластика (Косъм по косъм)",
+          "duration_minutes": 90,
+          "price": 120,
+          "currency": "лв."
+        },
+        {
+          "id": "s3",
+          "title": "Вечерен грим",
+          "duration_minutes": 60,
+          "price": 80,
+          "currency": "лв."
+        }
+      ],
+      "availability": {
+        "current_date_display": "Днес, 25 Май",
+        "slots": [
+          { "time": "10:00", "is_available": true },
+          { "time": "11:00", "is_available": true },
+          { "time": "12:00", "is_available": false },
+          { "time": "13:00", "is_available": true },
+          { "time": "14:00", "is_available": true },
+          { "time": "15:00", "is_available": true },
+          { "time": "16:00", "is_available": false },
+          { "time": "17:00", "is_available": true }
+        ]
+      },
+      "gallery": [
+        { "id": "g1", "url": "/images/portfolio/work1.jpg", "alt": "Микроблейдинг резултат" },
+        { "id": "g2", "url": "/images/portfolio/work2.jpg", "alt": "Вечерен грим" },
+        { "id": "g3", "url": "/images/portfolio/work3.jpg", "alt": "Миглопластика детайл" },
+        { "id": "g4", "url": "/images/portfolio/work4.jpg", "alt": "Маникюр дизайн" }
+      ]
+    }
+}

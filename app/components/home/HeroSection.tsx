@@ -8,13 +8,15 @@ const heroImage = {
 };
 
 const serviceOptions = [
-  "Масаж",
   "Грим",
   "Фризьор",
   "Маникюр",
   "Педикюр",
-  "Фитнес",
   "Миглопластика",
+  "Микроблейдинг",
+  "Козметик",
+  "Лазерна епилация",
+  "Масаж",
   "Друго",
 ];
 
@@ -38,8 +40,7 @@ const mobileImageClass =
   "mb-4 aspect-square w-[160px] rounded-full object-cover shadow-xl sm:w-[220px] lg:hidden";
 const titleClass =
   "my-5 text-4xl leading-tight text-[#FA2199] sm:my-6 sm:text-5xl lg:mb-6 lg:text-4xl xl:max-w-4xl xl:text-5xl";
-const dividerClass =
-  "h-1 w-full max-w-3xl bg-[#FFCEEC] opacity-50";
+const dividerClass = "h-1 w-full max-w-3xl bg-[#FFCEEC] opacity-50";
 const descriptionClass =
   "mt-5 max-w-3xl text-base leading-relaxed text-[#FF6DC7] sm:mt-6 sm:text-xl lg:mt-6 lg:text-lg xl:text-xl";
 const formClass = "mt-6 flex w-full flex-col gap-3 sm:gap-4";
