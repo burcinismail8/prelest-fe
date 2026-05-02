@@ -30,7 +30,7 @@ const HowItWorks = () => {
         alt="sparkles"
         width={80}
         height={80}
-        className="absolute left-4 top-4 h-10 w-10 sm:right-8 sm:top-2 sm:h-14 sm:w-14 md:right-10 md:top-6 md:h-16 md:w-16 lg:right-16 lg:h-20 lg:w-20 xl:right-24 2xl:right-32"
+        className="absolute left-4 top-4 h-10 w-10 sm:right-8 sm:top-2 sm:h-14 sm:w-14 md:right-10 md:top-6 md:h-16 md:w-16 lg:right-16 lg:h-20 lg:w-20 xl:right-24 xl:left-32 2xl:right-32"
       />
 
       {/* Text block stays centered on mobile and gets roomier on desktop. */}
@@ -44,29 +44,26 @@ const HowItWorks = () => {
           ръка.
         </p>
       </div>
-      <div className="grid w-full lg:w-3/4 gap-5 sm:grid-cols-3">
+      <div className="flex flex-col gap-8 lg:flex-row w-3/4 justify-between">
         {steps.map((step) => {
           return (
             <div
               key={step.id}
-              className="flex flex-col items-center justify-between rounded-3xl bg-white px-8 py-14 text-center text-[#FF70BF] shadow-lg/30 shadow-white"
+              className="flex flex-col w-full lg:w-1/3 items-center justify-between rounded-3xl bg-white px-8 pt-12 pb-6 text-center text-[#FF70BF] shadow-lg/30 shadow-white"
             >
               <Image
                 src={step.icon}
                 alt={step.title}
                 width={80}
                 height={80}
-                className="mb-4 h-18 w-18"
+                className="mb-4 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-18 lg:w-18 xl:h-20 xl:w-20"
               />
-              <div className="mb-4 h-px w-2/3 bg-[#FF70BF]/35 sm:w-28 md:w-36 lg:w-44" />
-              <div className="min-h-24">
-                <h4 className="text-xl mb-3 leading-none sm:text-lg md:text-2xl lg:text-3xl text-[#E446A8]">
-                  {`${step.id}. ${step.title}`}
-                </h4>
-                <p className="mt-2 text-[#FF70BF] text-sm leading-5 sm:text-xs md:text-base lg:text-lg">
-                  {step.text}
-                </p>
-              </div>
+              <div className="my-4 h-px w-2/3 bg-[#FF70BF]/35 sm:w-28 md:w-36 lg:w-44" />
+              <h4 className="text-lg leading-none sm:text-md md:text-xl xl:text-2xl text-[#E446A8]">{`${step.id}. ${step.title}`}</h4>
+              <p className="mt-2 min-h-16 lg:min-h-24 text-sm xl:text-base">
+                {" "}
+                {step.text}{" "}
+              </p>
             </div>
           );
         })}
