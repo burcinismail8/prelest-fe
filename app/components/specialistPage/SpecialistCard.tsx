@@ -22,6 +22,12 @@ const SpecialistCard = () => {
           </div>
         </div>
       </div>
+      <p className="text-sm text-gray-600 border-t border-[#FF70BF]/30 pt-4">
+        Най-ранен час:{" "}
+        <Link href="/1" className="text-[#D552A3] hover:underline">
+          петък, 16:00
+        </Link>
+      </p>
       <div className="flex flex-col relative items-center bg-white p-3 pl-14 rounded-lg text-[#D552A3] border border-[#FF70BF]/30">
         <div className="flex items-center w-full min-h-10 text-sm md:text-base">
           <Image
