@@ -13,8 +13,8 @@ const SpecialistProfilePage = () => {
         <SpecialistCard />
         <LocationMap />
       </div>
-      <div className="w-full">
-        <div className="flex flex-col md:flex-row">
+      <div className="w-full mt-8">
+        <div className="flex flex-col md:flex-row gap-6">
           <BookingSection />
           <PriceList />
         </div>
