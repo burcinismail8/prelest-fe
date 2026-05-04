@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import CustomComboBox from "./CustomComboBox";
+import Link from "next/link";
 
 const heroImage = {
   src: "/hero-section.jpg",
@@ -82,7 +83,9 @@ const HeroSection = () => {
               options={cityOptions}
             />
           </div>
-          <Button className={ctaButtonClass}>Намери</Button>
+          <Link href="/1">
+            <Button className={ctaButtonClass}>Намери</Button>
+          </Link>
         </div>
 
         <div className={desktopImageWrapperClass}>
