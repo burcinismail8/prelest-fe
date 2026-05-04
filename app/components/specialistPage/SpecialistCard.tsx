@@ -23,7 +23,7 @@ const SpecialistCard = () => {
         </div>
       </div>
       <div className="flex flex-col relative items-center bg-white p-3 pl-14 rounded-lg text-[#D552A3] border border-[#FF70BF]/30">
-        <div className="flex items-center w-full h-10 text-sm md:text-base">
+        <div className="flex items-center w-full min-h-10 text-sm md:text-base">
           <Image
             src="/icons/phone.svg"
             alt="Phone"
@@ -33,7 +33,7 @@ const SpecialistCard = () => {
           />
           Телефон за връзка: 0800 000 000
         </div>
-        <div className="flex items-center w-full h-10 text-sm md:text-base">
+        <div className="flex items-center w-full min-h-10 text-sm md:text-base">
           <Image
             src="/icons/location.svg"
             alt="Address"
@@ -43,7 +43,7 @@ const SpecialistCard = () => {
           />
           Адрес: Асеновград, Пловдив
         </div>
-        <div className="flex items-center w-full h-10 text-sm md:text-base">
+        <div className="flex items-center w-full min-h-10 text-sm md:text-base">
           <Image
             src="/icons/instagram.svg"
             alt="Instagram"
