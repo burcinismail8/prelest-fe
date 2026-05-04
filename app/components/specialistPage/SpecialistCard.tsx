@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SpecialistCard = () => {
@@ -21,7 +22,45 @@ const SpecialistCard = () => {
           </div>
         </div>
       </div>
-      <div>info-container</div>
+      <div className="flex flex-col relative items-center bg-white p-3 pl-14 rounded-lg text-[#D552A3] border border-[#FF70BF]/30">
+        <div className="flex items-center w-full h-10">
+          <Image
+            src="/icons/phone.svg"
+            alt="Phone"
+            width={25}
+            height={25}
+            className="mr-2 absolute left-4"
+          />
+          Телефон за връзка: 0800 000 000
+        </div>
+        <div className="flex items-center w-full h-10">
+          <Image
+            src="/icons/location.svg"
+            alt="Address"
+            width={35}
+            height={35}
+            className="absolute left-3"
+          />
+          Адрес: Асеновград, Пловдив
+        </div>
+        <div className="flex items-center w-full h-10">
+          <Image
+            src="/icons/instagram.svg"
+            alt="Instagram"
+            width={23}
+            height={23}
+            className="absolute left-4"
+          />
+          Instagram:{}
+          <Link
+            href="https://www.instagram.com/phibrows_eda"
+            className="ml-1 hover:underline"
+            target="_blank"
+          >
+            phibrows_eda
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
