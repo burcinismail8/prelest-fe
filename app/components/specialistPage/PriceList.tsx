@@ -1,58 +1,80 @@
+"use client";
+
+import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const services = [
+  { name: "Професионален грим", duration: "60 мин.", price: "100 €" },
+  { name: "Микроблейдинг", duration: "60 мин.", price: "150 €" },
+  { name: "Миглопластика", duration: "60 мин.", price: "200 €" },
+  { name: "Професионален грим", duration: "60 мин.", price: "100 €" },
+  { name: "Микроблейдинг", duration: "60 мин.", price: "150 €" },
+  { name: "Миглопластика", duration: "60 мин.", price: "200 €" },
+  { name: "Професионален грим", duration: "60 мин.", price: "100 €" },
+  { name: "Микроблейдинг", duration: "60 мин.", price: "150 €" },
+  { name: "Миглопластика", duration: "60 мин.", price: "200 €" },
+];
 
 const PriceList = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const syncOpenState = () => setIsOpen(desktopQuery.matches);
+
+    syncOpenState();
+    desktopQuery.addEventListener("change", syncOpenState);
+
+    return () => desktopQuery.removeEventListener("change", syncOpenState);
+  }, []);
+
   return (
-    <div className="bg-white relative rounded-xl py-3 border border-pink-200 md:min-w-[350px] xl:min-w-[450px] mb-6 mx-2 lg:mx-0">
-      <Image
-        src="/icons/shine-stars.svg"
-        alt="sparkles"
-        width={35}
-        height={35}
-        className="absolute right-4 top-2"
-      />
-      <h3 className="text-lg text-[#D552A3] mb-3 border-b border-pink-200 px-4 pb-2">
-        Ценоразпис
-      </h3>
-      <div className="max-h-[200px] lg:max-h-[400px] overflow-y-auto text-xs md:text-sm lg:text-base text-gray-600">
-        <div className="flex justify-between items-center p-2 pt-0 border-b border-pink-200">
-          <p>Професионален грим (60 мин.)</p>
-          <p>100 €</p>
+    <details
+      open={isOpen}
+      onToggle={(event) => setIsOpen(event.currentTarget.open)}
+      className="group mb-6 w-full overflow-hidden rounded-2xl border border-[#FF70BF]/30 bg-white shadow-sm"
+    >
+      <summary className="relative flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 transition hover:bg-[#FFF8FD] sm:px-5 [&::-webkit-details-marker]:hidden">
+        <div className="min-w-0">
+          <h3 className="mt-1 text-xl text-[#D552A3]">Ценоразпис</h3>
+          {/* <p className="mt-1 text-sm text-gray-500">
+            {services.length} услуги с ориентировъчни цени
+          </p> */}
         </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Микроблейдинг (60 мин.)</p>
-          <p>150 €</p>
+        <div className="flex shrink-0 items-center gap-3">
+          <Image
+            src="/icons/shine-stars.svg"
+            alt="sparkles"
+            width={35}
+            height={35}
+            className="opacity-80"
+          />
+          <span className="flex size-9 items-center justify-center rounded-full bg-[#FAD9EB]/70 text-lg text-[#D552A3] transition group-open:rotate-180">
+            <ChevronDownIcon className="w-4 h-4" />
+          </span>
         </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Миглопластика (60 мин.)</p>
-          <p>200 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Професионален грим (60 мин.)</p>
-          <p>100 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Микроблейдинг (60 мин.)</p>
-          <p>150 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Миглопластика (60 мин.)</p>
-          <p>200 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Професионален грим (60 мин.)</p>
-          <p>100 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 border-b border-pink-200">
-          <p>Микроблейдинг (60 мин.)</p>
-          <p>150 €</p>
-        </div>
-        <div className="flex justify-between items-center p-2 pb-0">
-          <p>Миглопластика (60 мин.)</p>
-          <p>200 €</p>
-        </div>
+      </summary>
+
+      <div className="max-h-[320px] divide-y divide-pink-100 overflow-y-auto border-t border-[#FF70BF]/20 text-sm text-gray-600 lg:max-h-[420px]">
+        {services.map((service, index) => (
+          <div
+            key={`${service.name}-${index}`}
+            className="flex items-center justify-between gap-4 px-4 py-3 transition hover:bg-[#FFF8FD] sm:px-5 sm:py-4"
+          >
+            <div className="min-w-0">
+              <p className="font-medium text-gray-700">{service.name}</p>
+              <p className="mt-0.5 text-xs text-[#D552A3]/75">
+                {service.duration}
+              </p>
+            </div>
+            <p className="shrink-0 rounded-full bg-[#FAD9EB]/70 px-3 py-1 text-sm  text-[#D552A3]">
+              {service.price}
+            </p>
+          </div>
+        ))}
       </div>
-    </div>
+    </details>
   );
 };
 
