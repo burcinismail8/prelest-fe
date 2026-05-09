@@ -5,7 +5,6 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
-  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -41,32 +40,14 @@ const portfolioItems = [
 ];
 
 const Gallery = () => {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [isAutoPlayPaused, setIsAutoPlayPaused] = React.useState(false);
-
-  React.useEffect(() => {
-    if (!api || isAutoPlayPaused) return;
-
-    const autoPlay = window.setInterval(() => {
-      api.scrollNext();
-    }, 5000);
-
-    return () => window.clearInterval(autoPlay);
-  }, [api, isAutoPlayPaused]);
-
   return (
     <section className="mt-8 w-full overflow-hidden">
       <Carousel
-        setApi={setApi}
         opts={{
           align: "center",
           loop: true,
         }}
         className="w-full"
-        onMouseEnter={() => setIsAutoPlayPaused(true)}
-        onMouseLeave={() => setIsAutoPlayPaused(false)}
-        onFocusCapture={() => setIsAutoPlayPaused(true)}
-        onBlurCapture={() => setIsAutoPlayPaused(false)}
       >
         <CarouselContent>
           {portfolioItems.map((item) => (
