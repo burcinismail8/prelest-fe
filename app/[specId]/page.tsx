@@ -16,7 +16,7 @@ const SpecialistProfilePage = () => {
       <div className="mt-8 flex flex-col justify-between pb-8 min-w-0 px-4 md:px-0 md:pr-6">
         <div className="flex w-full flex-col gap-6 lg:flex-row">
           <div className="min-w-0 flex-1 lg:flex-[1.7]">
-            {/* <BookingSection /> */}
+            <BookingSection />
           </div>
           <div className="w-full lg:w-[360px] xl:w-[420px]">
             <PriceList />
