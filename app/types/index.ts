@@ -29,5 +29,6 @@ export interface ISalon {
   phone: string | null;
   instagram_username: string | null;
   avatar_url: string | null;
-  services?: IService[]; // İlişkisel veriyle birlikte geldiğinde tetiklenecek dizi
+  services?: IService[];
+  gallery_images?: string[];
 }
