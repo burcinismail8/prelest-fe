@@ -13,12 +13,9 @@ const loginButtonColorClass =
   "bg-white text-[#D552A3] hover:bg-gray-100/60 hover:text-[#D552A3]";
 const registerButtonColorClass =
   "bg-[#D552A3] text-white hover:bg-[#D552A3]/80 hover:text-white";
-const softTransitionClass =
-  "duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]";
-const burgerLineClass =
-  `h-0.5 w-5 rounded-full bg-[#D552A3] transition-all ${softTransitionClass}`;
-const burgerButtonClass =
-  `flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#D552A3]/30 bg-white shadow-sm transition-all ${softTransitionClass} hover:bg-gray-100/60 hover:shadow-md active:scale-[0.97] active:bg-[#FDE9F4] active:shadow-sm min-[800px]:hidden`;
+const softTransitionClass = "duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]";
+const burgerLineClass = `h-0.5 w-5 rounded-full bg-[#D552A3] transition-all ${softTransitionClass}`;
+const burgerButtonClass = `flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#D552A3]/30 bg-white shadow-sm transition-all ${softTransitionClass} hover:bg-gray-100/60 hover:shadow-md active:scale-[0.97] active:bg-[#FDE9F4] active:shadow-sm min-[800px]:hidden`;
 
 const authButtonClass = (...classes: string[]) =>
   [authButtonBaseClass, ...classes].join(" ");
@@ -38,7 +35,7 @@ const NavBar = () => {
 
   return (
     <header className="border-b border-[#D552A3] px-4 py-3 min-[800px]:px-8 min-[800px]:py-2">
-      <div className="mx-auto w-full max-w-[1600px]">
+      <div className="mx-auto w-full max-w-400">
         <div className="flex items-center justify-between">
           {/* Logo links back to the home page. */}
           <Link href="/">
